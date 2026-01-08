@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Burren sparse basis files — SNP.manifest • cupcake</title>
+<title>This function calculates the posterior expectation of the log odds ratio for a number of case genotypes given control allele frequency — lor_nf • cupcake</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Burren sparse basis files — SNP.manifest" />
-<meta property="og:description" content="Burren sparse basis files" />
+<meta property="og:title" content="This function calculates the posterior expectation of the log odds ratio for a number of case genotypes given control allele frequency — lor_nf" />
+<meta property="og:description" content="This function calculates the posterior expectation of the log odds ratio for a number of case genotypes given control allele frequency" />
 
 
 
@@ -118,27 +118,58 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Burren sparse basis files</h1>
+    <h1>This function calculates the posterior expectation of the log odds ratio for a number of case genotypes given control allele frequency</h1>
     
-    <div class="hidden name"><code>SNP.manifest.Rd</code></div>
+    <div class="hidden name"><code>lor_nf.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Burren sparse basis files</p>
+    <p>This function calculates the posterior expectation of the log odds ratio for a number of case genotypes given control allele frequency</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>burren_imd_13_traits</span>)</pre>
+    <pre class="usage"><span class='fu'>lor_nf</span>(<span class='no'>f0</span>, <span class='no'>n0</span>, <span class='no'>g</span>, <span class='kw'>target.or</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>target.prob</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>n.steps</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>f0</th>
+      <td><p>a scalar - allele frequency in controls</p></td>
+    </tr>
+    <tr>
+      <th>n0</th>
+      <td><p>a scalar - number of control individuals sampled</p></td>
+    </tr>
+    <tr>
+      <th>g</th>
+      <td><p>a vector of length 3 given the number of 00, 01 and 11 genotypes seen</p></td>
+    </tr>
+    <tr>
+      <th>target.or</th>
+      <td><p>a scalar - an odds ratio threshold to compute P(sim.or &gt; target.or)</p></td>
+    </tr>
+    <tr>
+      <th>target.prob</th>
+      <td><p>a scalar - a probability that a sampled variant will exceed target.or</p></td>
+    </tr>
+    <tr>
+      <th>n.steps</th>
+      <td><p>an integer - length of search grid to employ - larger gives a more accurate integral estimate</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>a list object</p><ol>
+<li><p>00 - mean lor for reference hom</p></li>
+<li><p>01 - mean lor for het</p></li>
+<li><p>11 - mean lor for alternative hom</p></li>
+<li><p>quant00 - quantiles for posterior distribution of allele frequency in cases for ref hom</p></li>
+<li><p>quant01 - quantiles for posterior distribution of allele frequency in cases for het</p></li>
+<li><p>quant11 - quantiles for posterior distribution of allele frequency in cases for alt hom</p></li>
+</ol>
 
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>TODO</p>
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p>TODO</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>burren_imd_13_traits</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
